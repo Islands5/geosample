@@ -6,4 +6,10 @@
     <wpt lat="35.698571" lon="139.773015">
         <name>akihabara</name>
     </wpt>
+    <wpt lat="35.658581" lon="139.745433">
+        <name>tokyotower</name>
+    </wpt>
+    <wpt lat="35.664122" lon="139.729426">
+        <name>roppongi</name>
+    </wpt>
 </gpx>

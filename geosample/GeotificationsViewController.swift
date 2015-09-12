@@ -15,66 +15,43 @@ class GeotificationsViewController: UIViewController, MKMapViewDelegate, CLLocat
     var myMapView: MKMapView!
     var myLocationManager: CLLocationManager!
     
-    // 縮尺.
+    // 地図の縮尺.(単位メートル)
     let myLatDist : CLLocationDistance = 1000
     let myLonDist : CLLocationDistance = 1000
     
-    //皇居
-    let targetLocation: CLLocation = CLLocation(latitude: 35.685175, longitude: 139.7528)
-    let pinDistance = CLLocationDistance(900)
+    // 東京タワーの緯度経度35.658581" lon="139.745433
+    let targetLocation: CLLocation = CLLocation(latitude: 35.658581, longitude: 139.745433)
+    let pinDistance = CLLocationDistance(500)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        // LocationManagerの生成.
         myLocationManager = CLLocationManager()
-        
-        // Delegateの設定.
         myLocationManager.delegate = self
-        
-        // 距離のフィルタ.
         myLocationManager.distanceFilter = 100.0
-        
-        // 精度.
         myLocationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         
-        // セキュリティ認証のステータスを取得.
+        // セキュリティ認証
         let status = CLLocationManager.authorizationStatus()
-        
-        // まだ認証が得られていない場合は、認証ダイアログを表示.
         if(status == CLAuthorizationStatus.NotDetermined) {
-            
-            // まだ承認が得られていない場合は、認証ダイアログを表示.
             self.myLocationManager.requestAlwaysAuthorization();
         }
         
-        // 位置情報の更新を開始.
+        //　位置情報の取得をBGで動かす
         myLocationManager.startUpdatingLocation()
         
-        // MapViewの生成.
         myMapView = MKMapView()
-        
-        // MapViewのサイズを画面全体に.
         myMapView.frame = self.view.bounds
-        
-        // Delegateを設定.
         myMapView.delegate = self
-        
-        // MapViewをViewに追加.
+
         self.view.addSubview(myMapView)
         
-        
-        // Regionを作成.
         let myRegion: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(targetLocation.coordinate, myLatDist, myLonDist);
-        
-        // MapViewに反映.
         myMapView.setRegion(myRegion, animated: true)
         
         setPinWithCircle(targetLocation, circleDistance: pinDistance)
  
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,9 +71,11 @@ class GeotificationsViewController: UIViewController, MKMapViewDelegate, CLLocat
         // Regionを作成.
         let myRegion: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(myLocation, myLatDist, myLonDist);
         
+        
         // MapViewに反映.
         myMapView.setRegion(myRegion, animated: true)
-        dump(myLocation)
+        var currentCircle: MKCircle = MKCircle(centerCoordinate: myLocation, radius: CLLocationDistance(50))
+        myMapView.addOverlay(currentCircle)
         if existInTheArea(targetLocation, targetLocationDistance: pinDistance, existLocation: myLastLocation) {
             println("入ってる")
         } else {
@@ -106,7 +85,6 @@ class GeotificationsViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     // Regionが変更した時に呼び出されるメソッド.
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
-        println("regionDidChangeAnimated")
     }
     
     // 認証が変更された時に呼び出されるメソッド.
@@ -132,7 +110,6 @@ class GeotificationsViewController: UIViewController, MKMapViewDelegate, CLLocat
         
         // rendererを生成.
         let myCircleView: MKCircleRenderer = MKCircleRenderer(overlay: overlay)
-        
         // 円の内部を赤色で塗りつぶす.
         myCircleView.fillColor = UIColor.redColor()
         
@@ -150,30 +127,20 @@ class GeotificationsViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     func setPinWithCircle(centerLocation: CLLocation, circleDistance: CLLocationDistance){
         /*ピンを生成*/
-        
-        // ピンを生成.
         var myPin: MKPointAnnotation = MKPointAnnotation()
-        
-        // 座標を設定.
         myPin.coordinate = centerLocation.coordinate
+        myPin.title = "東京タワー"
+        myPin.subtitle = "テストです"
         
-        // タイトルを設定.
-        myPin.title = "テスト"
-        
-        // サブタイトルを設定.
-        myPin.subtitle = "ピンを置くよ"
-        
-        /* 円を描写 */
         let myCircle: MKCircle = MKCircle(centerCoordinate: centerLocation.coordinate, radius: circleDistance)
         
-        // MapViewにピンを追加.
         myMapView.addAnnotation(myPin)
         myMapView.addOverlay(myCircle)
     }
     
     func existInTheArea(targetLocation: CLLocation, targetLocationDistance: CLLocationDistance, existLocation: CLLocation) -> Bool {
         var distance = targetLocation.distanceFromLocation(existLocation) as CLLocationDistance
-        println(distance)
+        
         if distance < targetLocationDistance {
             return true
         }
