@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		ACB7A8851BA41036004435BD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		ACB7A88D1BA476F0004435BD /* 説明.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "説明.png"; sourceTree = "<group>"; };
+		ACB7A88D1BA476F0004435BD /* 説明.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "説明.png"; path = "geosample/説明.png"; sourceTree = "<group>"; };
 		ACB7A88F1BA4776A004435BD /* testLocations.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = testLocations.gpx; sourceTree = "<group>"; };
 		ACEE3F621BA4012800E305AC /* geosample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geosample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEE3F661BA4012800E305AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +71,7 @@
 				ACEE3F641BA4012800E305AC /* geosample */,
 				ACEE3F7A1BA4012800E305AC /* geosampleTests */,
 				ACEE3F631BA4012800E305AC /* Products */,
+				ACB7A88D1BA476F0004435BD /* 説明.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				ACEE3F671BA4012800E305AC /* AppDelegate.swift */,
-				ACB7A88D1BA476F0004435BD /* 説明.png */,
 				ACEE3F891BA403F200E305AC /* GeotificationsViewController.swift */,
 				ACB7A88F1BA4776A004435BD /* testLocations.gpx */,
 				ACEE3F6E1BA4012800E305AC /* Images.xcassets */,
