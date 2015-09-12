@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACB7A8861BA41036004435BD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB7A8851BA41036004435BD /* MapKit.framework */; };
+		ACB7A88E1BA476F0004435BD /* 説明.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB7A88D1BA476F0004435BD /* 説明.png */; };
 		ACEE3F681BA4012800E305AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE3F671BA4012800E305AC /* AppDelegate.swift */; };
-		ACEE3F6A1BA4012800E305AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE3F691BA4012800E305AC /* ViewController.swift */; };
-		ACEE3F6D1BA4012800E305AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEE3F6B1BA4012800E305AC /* Main.storyboard */; };
 		ACEE3F6F1BA4012800E305AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEE3F6E1BA4012800E305AC /* Images.xcassets */; };
 		ACEE3F721BA4012800E305AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACEE3F701BA4012800E305AC /* LaunchScreen.xib */; };
 		ACEE3F7E1BA4012800E305AC /* geosampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE3F7D1BA4012800E305AC /* geosampleTests.swift */; };
+		ACEE3F881BA4037A00E305AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEE3F871BA4037A00E305AC /* CoreLocation.framework */; };
+		ACEE3F8A1BA403F200E305AC /* GeotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE3F891BA403F200E305AC /* GeotificationsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +28,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ACB7A8851BA41036004435BD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		ACB7A88D1BA476F0004435BD /* 説明.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "説明.png"; sourceTree = "<group>"; };
+		ACB7A88F1BA4776A004435BD /* testLocations.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = testLocations.gpx; sourceTree = "<group>"; };
 		ACEE3F621BA4012800E305AC /* geosample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geosample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEE3F661BA4012800E305AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACEE3F671BA4012800E305AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACEE3F691BA4012800E305AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ACEE3F6C1BA4012800E305AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACEE3F6E1BA4012800E305AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ACEE3F711BA4012800E305AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		ACEE3F771BA4012800E305AC /* geosampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = geosampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEE3F7C1BA4012800E305AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACEE3F7D1BA4012800E305AC /* geosampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = geosampleTests.swift; sourceTree = "<group>"; };
+		ACEE3F871BA4037A00E305AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ACEE3F891BA403F200E305AC /* GeotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeotificationsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB7A8861BA41036004435BD /* MapKit.framework in Frameworks */,
+				ACEE3F881BA4037A00E305AC /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +66,8 @@
 		ACEE3F591BA4012800E305AC = {
 			isa = PBXGroup;
 			children = (
+				ACB7A8851BA41036004435BD /* MapKit.framework */,
+				ACEE3F871BA4037A00E305AC /* CoreLocation.framework */,
 				ACEE3F641BA4012800E305AC /* geosample */,
 				ACEE3F7A1BA4012800E305AC /* geosampleTests */,
 				ACEE3F631BA4012800E305AC /* Products */,
@@ -78,8 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				ACEE3F671BA4012800E305AC /* AppDelegate.swift */,
-				ACEE3F691BA4012800E305AC /* ViewController.swift */,
-				ACEE3F6B1BA4012800E305AC /* Main.storyboard */,
+				ACB7A88D1BA476F0004435BD /* 説明.png */,
+				ACEE3F891BA403F200E305AC /* GeotificationsViewController.swift */,
+				ACB7A88F1BA4776A004435BD /* testLocations.gpx */,
 				ACEE3F6E1BA4012800E305AC /* Images.xcassets */,
 				ACEE3F701BA4012800E305AC /* LaunchScreen.xib */,
 				ACEE3F651BA4012800E305AC /* Supporting Files */,
@@ -192,7 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACEE3F6D1BA4012800E305AC /* Main.storyboard in Resources */,
+				ACB7A88E1BA476F0004435BD /* 説明.png in Resources */,
 				ACEE3F721BA4012800E305AC /* LaunchScreen.xib in Resources */,
 				ACEE3F6F1BA4012800E305AC /* Images.xcassets in Resources */,
 			);
@@ -212,8 +222,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACEE3F6A1BA4012800E305AC /* ViewController.swift in Sources */,
 				ACEE3F681BA4012800E305AC /* AppDelegate.swift in Sources */,
+				ACEE3F8A1BA403F200E305AC /* GeotificationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,14 +246,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ACEE3F6B1BA4012800E305AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ACEE3F6C1BA4012800E305AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ACEE3F701BA4012800E305AC /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -409,6 +411,7 @@
 				ACEE3F831BA4012800E305AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACEE3F841BA4012800E305AC /* Build configuration list for PBXNativeTarget "geosampleTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +420,7 @@
 				ACEE3F861BA4012800E305AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
